@@ -4,7 +4,6 @@ variable "do_token" {
   sensitive   = true
 }
 
-
 variable "do_region" {
   description = "Digital ocean region"
   type        = string
@@ -23,32 +22,26 @@ variable "do_image" {
   default     = "ubuntu-20-04-x64"
 }
 
-variable "do_ssh_key" {
+variable "do_ssh_fingerprint" {
   description = "Digital ocean ssh key"
   type        = string
-  default     = "id_rsa"
+  sensitive   = true
 }
 
-variable "do_ssh_key_name" {
-  description = "Digital ocean ssh key name"
+variable "ssh_key_path" {
+  description = "ssh key path"
   type        = string
-  default     = "id_rsa"
+  default     = "~/.ssh/id_ed25519"
 }
 
-variable "do_ssh_key_path" {
-  description = "Digital ocean ssh key path"
+variable "ssh_key_pub_path" {
+  description = "ssh key public path"
   type        = string
-  default     = "/home/vagrant/.ssh/id_rsa"
-}
-
-variable "do_ssh_key_pub_path" {
-  description = "Digital ocean ssh key public path"
-  type        = string
-  default     = "/home/vagrant/.ssh/id_rsa.pub"
+  default     = "~/.ssh/id_ed25519.pub"
 }
 
 variable "do_name" {
   description = "Digital ocean droplet name"
   type        = string
-  default     = "remote-dev-server"
+  default     = "remote-dev-server-test"
 }

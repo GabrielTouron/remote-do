@@ -1,0 +1,13 @@
+- become: yes
+  hosts: all
+  tasks:
+    - name: Add the user 'gabriel' and add it to 'sudo'
+      user:
+        name: gabriel
+        groups: sudo
+
+    - name: Add SSH key to gabriel
+      authorized_key:
+        user: gabriel
+        state: present
+        key: "{{ lookup('file', ssh_key_pub_path ) }}"
