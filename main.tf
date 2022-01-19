@@ -32,7 +32,7 @@ resource "digitalocean_droplet" "web" {
   }
 
   provisioner "local-exec" {
-    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${digitalocean_droplet.web.ipv4_address},' --private-key ${var.ssh_key_path} -e 'ssh_key_pub_path=${var.ssh_key_pub_path}' ansible.yaml"
+    command = "ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '${digitalocean_droplet.web.ipv4_address},' --private-key ${var.ssh_key_path} -e 'ssh_key_pub_path=${var.ssh_key_pub_path}' ansible/playbook.yml"
   }
 
 }
