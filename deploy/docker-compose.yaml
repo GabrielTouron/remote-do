@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  terraform:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+      - .:/deploy
+      - ~/.ssh:/root/.ssh
+    working_dir: /deploy

@@ -31,17 +31,23 @@ variable "do_ssh_fingerprint" {
 variable "ssh_key_path" {
   description = "ssh key path"
   type        = string
-  default     = "~/.ssh/id_ed25519"
+  default     = "/root/.ssh/id_ed25519"
 }
 
 variable "ssh_key_pub_path" {
   description = "ssh key public path"
   type        = string
-  default     = "~/.ssh/id_ed25519.pub"
+  default     = "/root/.ssh/id_ed25519.pub"
 }
 
 variable "do_name" {
   description = "Digital ocean droplet name"
   type        = string
   default     = "remote-dev-server-test"
+}
+
+variable "username" {
+  description = "Username"
+  type        = string
+  default     = "exploit"
 }
