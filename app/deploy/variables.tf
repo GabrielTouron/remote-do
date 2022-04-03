@@ -31,13 +31,13 @@ variable "do_ssh_fingerprint" {
 variable "ssh_key_path" {
   description = "ssh key path"
   type        = string
-  default     = "/root/.ssh/id_ed25519"
+  default     = "/root/.ssh/do-private"
 }
 
 variable "ssh_key_pub_path" {
   description = "ssh key public path"
   type        = string
-  default     = "/root/.ssh/id_ed25519.pub"
+  default     = "/root/.ssh/do-private.pub"
 }
 
 variable "do_name" {

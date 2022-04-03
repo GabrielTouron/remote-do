@@ -9,4 +9,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./scripts:/scripts
+      - ~/.ssh/gabriel:/root/.ssh
+      - ./pages:/app/pages
+      - ./deploy:/app/deploy
+      - ./scripts:/app/scripts
+      - ./public:/app/public
+      - ./styles:/app/styles
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.toto.entrypoints=web"
+      - "traefik.http.routers.toto.rule=Host(`idp.localhost`)"
