@@ -5,6 +5,8 @@
 *.tfstate
 *.tfstate.*
 
+*.pnpm-store/*
+
 # Crash log files
 crash.log
 

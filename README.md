@@ -95,3 +95,7 @@ docker-compose -f deploy/docker-compose.yaml run --rm terraform apply -var-file=
 ```
 ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -u root -i '172.16.238.10', --private-key="~./.ssh/id_ed25519" -e ssh_key_pub_path='~./.ssh/id_ed25519.pub' -e username='exploit' ./deploy/ansible/playbook.yml
 ```
+
+```
+docker run -ti --rm -v $(pwd):/app gabriel-node pnpm dlx create-next-app@latest -e with-docker-multi-env --use-pnpm
+```
